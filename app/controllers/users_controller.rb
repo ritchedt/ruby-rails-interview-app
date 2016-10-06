@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    remove_duplicate_users
     @users = User.paginate(page: params[:page], per_page: 5)
   end
 
@@ -46,5 +47,13 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    def remove_duplicate_users
+      duplicate_row_values = User.select('name').group('name').having('count(*) > 1').pluck(:name)
+
+      duplicate_row_values.each do |name|
+        User.where(name: name).order(id: :asc)[1..-1].map(&:destroy)
+      end
     end
 end
