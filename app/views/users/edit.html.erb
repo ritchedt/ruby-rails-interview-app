@@ -1,0 +1,10 @@
+<div class="text-center">
+  <h1>Edit Name</h1>
+</div>
+<div>
+  <%= form_for @user, method: :patch do |f| %>
+      <%= render 'create_fields', f: f %>
+      <%= f.submit "Apply Changes", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>
+

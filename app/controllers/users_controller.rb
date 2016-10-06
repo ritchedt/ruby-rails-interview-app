@@ -22,6 +22,17 @@ class UsersController < ApplicationController
     render 'new'
   end
 
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      flash.now[:notice] = "The user has been updated to #{@user.name}!"
+    else
+      flash.now[:warning] = "The user info has not been updated!"
+    end
+    render 'edit'
+  end
+
   def destroy
     user = User.find(params[:id])
     user.destroy
