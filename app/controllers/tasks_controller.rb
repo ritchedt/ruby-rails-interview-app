@@ -4,13 +4,13 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  #def show
-  #  @task = Task.find(params[:id])
-  #end
+  def show
+    @task = Task.find(params[:id])
+  end
 
   def import
     Task.import(params[:file])
-    redirect_to root_url, notice: "Activity Data Imported!"
+    redirect_to tasks_path, notice: "Employee Project Data Imported!"
   end
 
 end
