@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20161007183920) do
 
   create_table "materials", force: :cascade do |t|
     t.string   "project"
-    t.string   "materials"
+    t.string   "material"
     t.string   "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -8,9 +8,4 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def import
-    Material.import(params[:file])
-    #redirect_to link_to project.name, project, notice: "Employee Project Data Imported!"
-  end
-
 end
