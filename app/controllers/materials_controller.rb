@@ -6,5 +6,6 @@ class MaterialsController < ApplicationController
 
   def import
     Material.import(params[:file])
+    redirect_to materials_path, notice: "Project Material Data Imported!"
   end
 end
