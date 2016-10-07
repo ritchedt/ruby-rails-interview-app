@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h1>Employee Project Role</h1>
+
+  <table>
+    <tbody>
+    <%= @tasks.each do |task| %>
+        <tr>
+          <td> <%= task.employee %></td>
+          <td> <%= task.project %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <h4>Import the data!</h4>
+  <%= form_tag import_tasks_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV" %>
+  <% end %>
+
+</div>

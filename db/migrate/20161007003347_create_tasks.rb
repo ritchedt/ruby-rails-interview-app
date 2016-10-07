@@ -1,6 +1,6 @@
-class CreateRoles < ActiveRecord::Migration
+class CreateTasks < ActiveRecord::Migration
   def change
-    create_table :roles do |t|
+    create_table :tasks do |t|
       t.string :employee
       t.string :project
 

@@ -1,0 +1,12 @@
+<div class="center hero-unit">
+  <table>
+    <tbody>
+    <%= @tasks.each do |task| %>
+        <tr>
+          <td> <%= task.employee %></td>
+          <td> <%= task.project %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
