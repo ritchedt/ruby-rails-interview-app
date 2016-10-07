@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :projects
 
+  resources :materials do
+    collection { post :import }
+  end
+
 
   root 'static_pages#home'
 
