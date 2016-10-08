@@ -2,6 +2,12 @@
 
 <div class="center hero-unit">
   <h3>Description => <%= @project.description %></h3>
+  <h3>Contributors:</h3>
+  <div>
+    <% @task.each do |item| %>
+        <ul><%= item.employee %></ul>
+    <% end %>
+  </div>
   <h3>Materials:</h3>
   <div>
     <%= render @material %>
