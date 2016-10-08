@@ -1,0 +1,24 @@
+<style>
+  table {
+    width: 20%;
+    table-layout: fixed;
+  }
+
+  th, td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+<h2>Projects Assigned:</h2>
+<div>
+  <% Task.all.each do |task| %>
+    <% @project.each do |project| %>
+        <% if project.name == task.project && task.employee == @task.employee %>
+            <ul><%= project.name %></ul>
+        <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to 'Back', tasks_path %>
+
