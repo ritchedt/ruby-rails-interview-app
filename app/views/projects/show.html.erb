@@ -2,6 +2,11 @@
 
 <div class="center hero-unit">
   <h3>Description => <%= @project.description %></h3>
+  <h3>Materials:</h3>
+  <div>
+    <%= render @material %>
+  </div>
+  <br>
 </div>
 
 <%= link_to 'Back', projects_path %>

@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @material = Material.where(:project => Project.find(params[:id]).name)
   end
 
 end
