@@ -10,7 +10,9 @@
   </div>
   <h3>Materials:</h3>
   <div>
-    <%= render @material %>
+    <% @material.each do |material| %>
+        <ul><%= material.material + " => " + material.amount%></ul>
+    <% end %>
   </div>
   <br>
 </div>
