@@ -11,12 +11,18 @@
 </style>
 
 <div class="center hero-unit">
-<table>
-  <tbody>
-  <tr>
-    <td> <%= material.material %></td>
-    <td> <%= material.amount %></td>
-  </tr>
-  </tbody>
-</table>
+  <table>
+    <tbody>
+    <tr>
+      <td> <%= material.material %></td>
+      <% @total = 0 %>
+      <% Material.all.each do |item| %>
+          <% if material.material == item.material %>
+            <% @total += get_total_material_amount(item.material, item.amount) %>
+          <% end %>
+      <% end %>
+      <td> <%= (@total).to_s + " " + material.amount[/\d*(\D*)/, 1] %></td>
+    </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,20 +1,7 @@
 <div class="text-center">
   <h1>All Materials</h1>
 
-  <div class="center hero-unit">
-    <table>
-      <tbody>
-      <tr>
-        <th>Material</th>
-        <th>Amount</th>
-      </tr>
-      <tr>
-        <%= render @materials %>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
+  <%= render @materials %>
 
   <h4>Import the data!</h4>
   <%= form_tag import_materials_path, multipart: true do %>
