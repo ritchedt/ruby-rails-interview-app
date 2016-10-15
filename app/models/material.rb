@@ -1,6 +1,6 @@
 class Material < ActiveRecord::Base
 
-  require 'CSV'
+  require 'csv'
 
   def self.import(file)
     Material.destroy_all
